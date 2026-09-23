@@ -1,0 +1,1 @@
+Work-in-progress 3-statement financial model and DCF valuation of Planet Fitness (NYSE: PLNT), built from public SEC filings in Excel.

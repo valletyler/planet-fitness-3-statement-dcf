@@ -1,144 +1,103 @@
-# Planet Fitness (NYSE: PLNT) — 3-Statement Financial Model & DCF Valuation
+# Planet Fitness (NYSE: PLNT) - Integrated 3-Statement Model & DCF Valuation
 
-> **Project Status: In Progress**  
-> Building a fully integrated three-statement financial model and discounted cash flow valuation for Planet Fitness, Inc. from public SEC filings.
+**Completed: September 2026**  
+**Author: Tyler Valle**  
+**Portfolio:** https://tylervalle.higgsfield.app/projects/planet-fitness
 
-This project is being built from a blank workbook to demonstrate practical financial modeling, forecasting, valuation, and FP&A-oriented analytical skills. The model uses historical financial data from Planet Fitness public filings, derives operating drivers from historical performance, and progressively links supporting schedules into a five-year integrated forecast.
+A from-scratch financial modeling and valuation case study built from Planet Fitness, Inc. public filings. The project demonstrates the core work expected in Financial Analyst, FP&A, and valuation-oriented roles: historical financial statement analysis, driver-based forecasting, supporting schedules, three-statement integration, DCF valuation, sensitivity analysis, scenarios, market cross-checks, and executive communication.
 
-## Project Objective
+> **Historical case-study basis:** FY2023 is Year 0 and the model uses a **Dec-2023 reference share price of $40.16**. This is a portfolio exercise, not a current 2026 investment recommendation.
 
-Build a professional financial model that:
+## What I Built
 
-- Standardizes historical Income Statement, Balance Sheet, and Cash Flow Statement data.
-- Analyzes historical operating and working-capital drivers.
-- Builds supporting schedules for working capital, PP&E/depreciation, and debt/interest.
-- Forecasts the three financial statements over five years.
-- Integrates the statements dynamically with automated balance checks.
-- Calculates Unlevered Free Cash Flow and enterprise value using a DCF.
-- Tests valuation outcomes using WACC, terminal growth, exit multiple, and scenario sensitivities.
+- Standardized FY2021A-FY2023A Income Statement, Balance Sheet, and Cash Flow Statement data.
+- Calculated historical revenue growth, margins, effective tax rate, DSO, DIO, DPO, capital intensity, and depreciation drivers.
+- Built supporting schedules for working capital, PP&E/depreciation, debt, interest, minimum cash, and optional debt paydown.
+- Built a fully integrated FY2024E-FY2028E three-statement forecast.
+- Added automated balance-sheet checks; **all five forecast years balance**.
+- Calculated UFCF and WACC using CAPM and after-tax cost of debt.
+- Valued the business using both Gordon Growth and Exit EV/EBITDA terminal-value methods.
+- Built 5x5 sensitivity tables for WACC vs. perpetual growth and WACC vs. exit multiple.
+- Built Bear / Base / Bull scenarios.
+- Added trading-comps cross-checks and a valuation football field.
+- Created a one-page executive valuation memo.
 
-## Current Build Status
+## Model Audit & Corrections
 
-| Module | Status | Current Work |
-|---|---|---|
-| Historical financial statements | ✅ Substantially complete | Historical IS, BS, and CFS organized from public filings |
-| Historical driver analysis | 🟡 In progress | Revenue growth, margins, taxes, working-capital and capital-intensity drivers |
-| Working capital schedule | 🟡 In progress | A/R, inventory, A/P and NWC forecast framework built |
-| PP&E / depreciation schedule | 🟡 In progress | Roll-forward and depreciation framework under construction |
-| Debt / interest schedule | 🟡 Started | Debt framework established; interest and debt sweep still to be completed |
-| Five-year integrated forecast | 🟡 Started | Operating forecast initiated; full three-statement integration still in progress |
-| DCF valuation | ⬜ Not started | Will follow completion of integrated forecast |
-| Sensitivity analysis | ⬜ Not started | WACC / growth and WACC / exit multiple tables planned |
-| Bull / Base / Bear cases | ⬜ Not started | Scenario toggles planned |
-| Executive summary | ⬜ Not started | One-page valuation and findings summary planned |
+The first model pass produced an unusually high valuation, so I audited the economics rather than accepting the output mechanically.
+
+- **CapEx:** Replaced a 3.8% net-PP&E-growth proxy with FY2023 actual capital intensity of approximately **12.7% of revenue**.
+- **Depreciation:** Capped depreciation on the existing PP&E base so cumulative depreciation cannot exceed remaining assets.
+- **Debt:** Added mandatory repayment, minimum-cash preservation, optional paydown, revolver logic, and average-balance interest economics.
+- **Working capital:** Linked DSO / DIO / DPO to centralized driver assumptions.
+- **Integration:** Repaired disconnected forecast lines so statement changes flow through cash and the balance sheet.
+- **Controls:** Added balance, scenario, and sensitivity checks.
+
+## Base-Case Valuation Snapshot
+
+| Metric | Result |
+|---|---:|
+| WACC | 6.63% |
+| Gordon Growth implied value / share | $149.69 |
+| Exit Multiple implied value / share | $141.26 |
+| Blended Base DCF | $145.47 |
+| Bear blended DCF | $74.12 |
+| Bull blended DCF | $158.19 |
+| Dec-2023 reference price | $40.16 |
+
+The result is highly assumption-sensitive. The executive summary therefore presents a **range**, not a single target price, and highlights terminal-value concentration, WACC sensitivity, operating leverage, growth durability, and capital intensity.
 
 ## Model Architecture
 
 ### 1. Historical Financials
-Historical company financial statements are standardized into a consistent modeling format to create the foundation for forecasting.
+FY2021A-FY2023A statements are standardized into a consistent modeling layout and validated before forecasting.
 
 ### 2. Operating Drivers
-Historical performance is analyzed to derive forecast assumptions including:
-
-- Revenue growth
-- Gross margin
-- SG&A as a % of revenue
-- Effective tax rate
-- Days Sales Outstanding (DSO)
-- Days Inventory Outstanding (DIO)
-- Days Payable Outstanding (DPO)
-- CapEx as a % of revenue
-- Depreciation as a function of PP&E
+Forecast assumptions cover revenue growth, gross margin, operating cost growth, tax rate, DSO, DIO, DPO, CapEx intensity, and depreciation.
 
 ### 3. Supporting Schedules
-Supporting schedules are being built separately from the main financial statements to keep the model transparent and auditable.
-
-**Working Capital**
-
-- Accounts Receivable forecast using DSO
-- Inventory forecast using DIO
-- Accounts Payable forecast using DPO
-- Net Working Capital and annual changes in NWC
-
-**PP&E and Depreciation**
-
-- Beginning PP&E
-- Capital expenditures
-- Depreciation
-- Ending PP&E roll-forward
-
-**Debt and Interest**
-
-- Beginning debt balances
-- Mandatory repayments
-- New borrowings / revolver activity
-- Average debt balance
-- Interest expense
-- Planned dynamic cash / debt sweep
+Working capital, PP&E/depreciation, and debt/interest are modeled separately and linked into the three statements.
 
 ### 4. Integrated Forecast
-The completed model will dynamically connect:
 
-`Income Statement → Net Income → Cash Flow Statement → Ending Cash → Balance Sheet`
+`Income Statement -> Net Income -> Cash Flow Statement -> Ending Cash -> Balance Sheet`
 
-with supporting schedules feeding the relevant line items throughout the forecast.
+with supporting schedules feeding working capital, PP&E, debt, interest, and retained earnings.
 
-### 5. DCF Valuation
-The valuation section will calculate:
+### 5. DCF
 
-**Unlevered Free Cash Flow**
+`UFCF = EBIT x (1 - Tax Rate) + D&A - CapEx - Increase in NWC`
 
-`UFCF = EBIT × (1 − Tax Rate) + D&A − CapEx − Change in NWC`
+The DCF discounts five forecast years plus terminal value and bridges enterprise value to equity value per diluted share.
 
-**WACC** using CAPM-derived cost of equity and after-tax cost of debt.
-
-**Terminal Value** using both:
-
-- Perpetuity Growth Method
-- Exit Multiple Method
-
-The model will bridge Enterprise Value to Equity Value and calculate implied intrinsic value per diluted share.
+### 6. Sensitivities & Scenarios
+Two-way sensitivity tables and Bear / Base / Bull cases make the valuation range explicit and show which assumptions matter most.
 
 ## Screenshots
 
 ### Model Overview
-
 ![Model Overview](assets/screenshots/model_overview.png)
 
 ### Supporting Schedules
-
 ![Supporting Schedules](assets/screenshots/supporting_schedules.png)
+
+## Deliverables
+
+- **Final Excel model:** [download from portfolio](https://tylervalle.higgsfield.app/downloads/Tyler_Valle_Planet_Fitness_3Statement_DCF_Final.xlsx)
+- **Executive summary PDF:** [download from portfolio](https://tylervalle.higgsfield.app/downloads/Tyler_Valle_PLNT_Executive_Summary.pdf)
+- **Interactive case study:** https://tylervalle.higgsfield.app/projects/planet-fitness
+- [Source & assumption notes](sources/README.md)
 
 ## Skills Demonstrated
 
-`Financial Modeling` · `Three-Statement Modeling` · `Excel` · `Financial Statement Analysis` · `Forecasting` · `Working Capital Modeling` · `PP&E Modeling` · `Debt Modeling` · `DCF Valuation` · `WACC` · `Scenario Analysis` · `Sensitivity Analysis`
-
-## Files
-
-- [`model/Planet_Fitness_3_Statement_DCF_WIP.xlsx`](model/Planet_Fitness_3_Statement_DCF_WIP.xlsx) — current work-in-progress model.
-- [`notes/BUILD_ROADMAP.md`](notes/BUILD_ROADMAP.md) — model construction roadmap and completion checklist.
-- [`sources/README.md`](sources/README.md) — primary public-data source information.
+`Three-Statement Modeling` · `Financial Statement Analysis` · `Forecasting` · `Working Capital Modeling` · `PP&E Modeling` · `Debt Modeling` · `DCF Valuation` · `WACC` · `Scenario Analysis` · `Sensitivity Analysis` · `Trading Comps` · `Excel` · `Executive Communication`
 
 ## Data Source
 
-Historical financial information is based on Planet Fitness, Inc. public SEC filings, including the Form 10-K for the fiscal year ended December 31, 2023, filed February 29, 2024.
+Historical financial data is based on Planet Fitness, Inc. FY2023 Form 10-K and related public filings.
 
 Primary filing:  
 https://www.sec.gov/Archives/edgar/data/1637207/000163720724000020/plnt-20231231.htm
-
-## Planned Final Deliverables
-
-When complete, this repository will include:
-
-1. Fully integrated five-year three-statement model.
-2. Automated balance-sheet check.
-3. Working-capital, PP&E/depreciation, and debt/interest schedules.
-4. DCF using perpetuity-growth and exit-multiple approaches.
-5. WACC and terminal-value assumptions.
-6. Two-way valuation sensitivity tables.
-7. Bull / Base / Bear scenario analysis.
-8. One-page executive valuation summary.
-9. Valuation football field / summary visualization.
 
 ## Disclaimer
 

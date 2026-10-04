@@ -2,7 +2,7 @@
 
 **Completed: September 2026**  
 **Author: Tyler Valle**  
-**Portfolio:** https://tylervalle.higgsfield.app/projects/planet-fitness
+**Portfolio:** https://tylervalle.com/projects/planet-fitness
 
 A from-scratch financial modeling and valuation case study built from Planet Fitness, Inc. public filings. The project demonstrates the core work expected in Financial Analyst, FP&A, and valuation-oriented roles: historical financial statement analysis, driver-based forecasting, supporting schedules, three-statement integration, DCF valuation, sensitivity analysis, scenarios, market cross-checks, and executive communication.
 
@@ -83,9 +83,9 @@ Two-way sensitivity tables and Bear / Base / Bull cases make the valuation range
 
 ## Deliverables
 
-- **Final Excel model:** [download from portfolio](https://tylervalle.higgsfield.app/downloads/Tyler_Valle_Planet_Fitness_3Statement_DCF_Final.xlsx)
-- **Executive summary PDF:** [download from portfolio](https://tylervalle.higgsfield.app/downloads/Tyler_Valle_PLNT_Executive_Summary.pdf)
-- **Interactive case study:** https://tylervalle.higgsfield.app/projects/planet-fitness
+- **Final Excel model:** [download from portfolio](https://tylervalle.com/downloads/Tyler_Valle_Planet_Fitness_3Statement_DCF_Final.xlsx)
+- **Executive summary PDF:** [download from portfolio](https://tylervalle.com/downloads/Tyler_Valle_PLNT_Executive_Summary.pdf)
+- **Interactive case study:** https://tylervalle.com/projects/planet-fitness
 - [Source & assumption notes](sources/README.md)
 
 ## Skills Demonstrated

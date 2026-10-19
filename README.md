@@ -1,12 +1,12 @@
 # Planet Fitness (NYSE: PLNT) - Integrated 3-Statement Model & DCF Valuation
 
-**Completed: September 2026**  
+**Built September 2026; revised and audited October 19, 2026**  
 **Author: Tyler Valle**  
 **Portfolio:** https://tylervalle.com/projects/planet-fitness
 
 A from-scratch financial modeling and valuation case study built from Planet Fitness, Inc. public filings. The project demonstrates the core work expected in Financial Analyst, FP&A, and valuation-oriented roles: historical financial statement analysis, driver-based forecasting, supporting schedules, three-statement integration, DCF valuation, sensitivity analysis, scenarios, market cross-checks, and executive communication.
 
-> **Historical case-study basis:** FY2023 is Year 0 and the model uses a **Dec-2023 reference share price of $40.16**. This is a portfolio exercise, not a current 2026 investment recommendation.
+> **Historical case-study basis:** FY2023 is Year 0 and the model uses a **Dec-2023 reference share price of $73.00**. This is a portfolio exercise, not a current 2026 investment recommendation.
 
 ## What I Built
 
@@ -24,28 +24,28 @@ A from-scratch financial modeling and valuation case study built from Planet Fit
 
 ## Model Audit & Corrections
 
-The first model pass produced an unusually high valuation, so I audited the economics rather than accepting the output mechanically.
+After the first model pass, I corrected the economic assumptions and then audited the valuation-date benchmark, economic share count, securities bridge, PP&E depreciation and intangible amortization. The revised Base blended DCF is $106.41, and all 15 Bear/Base/Bull forecast balance checks pass.
 
 - **CapEx:** Replaced a 3.8% net-PP&E-growth proxy with FY2023 actual capital intensity of approximately **12.7% of revenue**.
 - **Depreciation:** Capped depreciation on the existing PP&E base so cumulative depreciation cannot exceed remaining assets.
 - **Debt:** Added mandatory repayment, minimum-cash preservation, optional paydown, revolver logic, and average-balance interest economics.
 - **Working capital:** Linked DSO / DIO / DPO to centralized driver assumptions.
 - **Integration:** Repaired disconnected forecast lines so statement changes flow through cash and the balance sheet.
-- **Controls:** Added balance, scenario, and sensitivity checks.
+- **Valuation inputs:** Replaced the incorrect $40.16 historical share-price reference with the $73.00 Dec. 29, 2023 close; included the year-end Class A shares and exchangeable Class B/LLC economic units (88,157,935 fully exchanged units, before additional option/RSU dilution).\n- **Cash bridge:** Added unrestricted long-term marketable securities to cash and short-term marketable securities, excluding restricted cash.\n- **D&A:** Split 10-K disclosed finite-lived intangible amortization from PP&E depreciation estimates, reflected intangible amortization in the forecast balance sheets and free cash flow.\n- **Controls:** Refreshed the three scenario snapshots, dynamically linked WACC in both 5x5 sensitivity tables, and confirmed all 15 forecast balance sheets reconcile.
 
 ## Base-Case Valuation Snapshot
 
 | Metric | Result |
 |---|---:|
-| WACC | 6.63% |
-| Gordon Growth implied value / share | $149.69 |
-| Exit Multiple implied value / share | $141.26 |
-| Blended Base DCF | $145.47 |
-| Bear blended DCF | $74.12 |
-| Bull blended DCF | $158.19 |
-| Dec-2023 reference price | $40.16 |
+| WACC | 7.59% |
+| Gordon Growth implied value / share | $96.96 |
+| Exit Multiple implied value / share | $115.86 |
+| Blended Base DCF | $106.41 |
+| Bear blended DCF | $53.07 |
+| Bull blended DCF | $115.92 |
+| Dec-2023 reference price | $73.00 |
 
-The result is highly assumption-sensitive. The executive summary therefore presents a **range**, not a single target price, and highlights terminal-value concentration, WACC sensitivity, operating leverage, growth durability, and capital intensity.
+The 7.59% WACC and enterprise-to-equity share basis reflect retrospective FY2023 conditions and project assumptions. The result is highly assumption-sensitive. The executive summary therefore presents a **range**, not a single target price, and highlights terminal-value concentration (~82.7% of Gordon enterprise value), WACC sensitivity (~$11.42/share for a +/-50 bp change), operating leverage, growth durability, and capital intensity.
 
 ## Model Architecture
 
@@ -73,13 +73,9 @@ The DCF discounts five forecast years plus terminal value and bridges enterprise
 ### 6. Sensitivities & Scenarios
 Two-way sensitivity tables and Bear / Base / Bull cases make the valuation range explicit and show which assumptions matter most.
 
-## Screenshots
+## Screenshot note
 
-### Model Overview
-![Model Overview](assets/screenshots/model_overview.png)
-
-### Supporting Schedules
-![Supporting Schedules](assets/screenshots/supporting_schedules.png)
+The original screenshot images in `assets/screenshots/` reflect an earlier draft and should not be used as evidence for the revised calculations. Download the **current workbook** and **current executive summary PDF** from the portfolio.
 
 ## Deliverables
 
@@ -92,7 +88,7 @@ Two-way sensitivity tables and Bear / Base / Bull cases make the valuation range
 
 `Three-Statement Modeling` · `Financial Statement Analysis` · `Forecasting` · `Working Capital Modeling` · `PP&E Modeling` · `Debt Modeling` · `DCF Valuation` · `WACC` · `Scenario Analysis` · `Sensitivity Analysis` · `Trading Comps` · `Excel` · `Executive Communication`
 
-## Data Source
+## Methodological caveats\n\n- This is a **retrospective** exercise: the FY2023 10-K was published in February 2024, so the model could **not** have been built from that 10-K at the December 29, 2023 benchmark price in real time.\n- The share denominator is FY2023 year-end Class A stock plus exchangeable Class B/LLC units (88,157,935 fully exchanged economic units); treasury-stock method incremental option/RSU dilution is not separately estimated.\n- The supplied Jefferies peer/own-multiple summary ranges have not been independently recreated from individual peer companies, and are presented as **unverified illustrative context**, not a validated comps output.\n- Scenario snapshots are saved point-in-time; editing drivers requires refreshing them. The active-scenario control indicates if a snapshot becomes stale.\n\n## Data Source
 
 Historical financial data is based on Planet Fitness, Inc. FY2023 Form 10-K and related public filings.
 
@@ -102,3 +98,5 @@ https://www.sec.gov/Archives/edgar/data/1637207/000163720724000020/plnt-20231231
 ## Disclaimer
 
 This project is an independent educational and portfolio exercise using publicly available information. It is not affiliated with Planet Fitness, Inc. and is not investment advice.
+
+Historical stock benchmark source: https://www.financecharts.com/stocks/PLNT/summary/price
